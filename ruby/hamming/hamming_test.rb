@@ -60,7 +60,6 @@ class HammingTest < Minitest::Test
   end
 
   def test_disallow_second_strand_longer
-    skip
     assert_raises(ArgumentError) { Hamming.compute('ATA', 'AGTG') }
   end
 
@@ -73,7 +72,6 @@ class HammingTest < Minitest::Test
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
-    skip
     assert_equal 1, Hamming::VERSION
   end
 end

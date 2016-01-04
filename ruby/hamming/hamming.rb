@@ -1,18 +1,15 @@
-
 require 'pry'
+
 class Hamming
   VERSION = 1
 
   def self.compute(strand_a, strand_b, counter=0)
     if strand_a.length != strand_b.length
-      binding.pry
-      Raise ArgumentError
-      binding.pry
+      raise ArgumentError
     else
       if strand_a == strand_b
         counter
       else
-        binding.pry
       computate(strand_a, strand_b, counter)
       end
     end
@@ -25,7 +22,7 @@ class Hamming
         if strand_a.empty? && strand_b.empty?
           return counter
         else
-          computate(strand_a, strand_b, counter)
+        computate(strand_a, strand_b, counter)
         end
     elsif strand_a[0] != strand_b[0]
       counter += 1
@@ -39,10 +36,9 @@ class Hamming
     else
       counter
     end
+
   end
 
 
 
 end
-
-Hamming.compute('AATG', 'AAA')
