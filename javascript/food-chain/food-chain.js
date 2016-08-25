@@ -44,12 +44,18 @@ var verses = {
   8 : 'I know an old lady who swallowed a horse.\n' + 'She\'s dead, of course!\n',
 }
 
-function FoodChain() {
-
-}
+function FoodChain() {}
 
 FoodChain.prototype.verse = function(num) {
   return verses[num];
+}
+
+FoodChain.prototype.verses = function() {
+  var result = '';
+  for (var n = arguments[0], len = arguments[1] + 1; n < len; n++) {
+    result += this.verse(n) + '\n';
+  }
+  return result;
 }
 
 module.exports = FoodChain;
