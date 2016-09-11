@@ -1,3 +1,5 @@
+/* @flow */
+
 function parse(str) {
   // var arr = str.replace(/[-]/g, ' ').split(/\W+/);
   // var result = ''
@@ -7,7 +9,7 @@ function parse(str) {
   // return result;
   return str.split(/\W+/)
         .map(function(word) {
-            firstChar = word.charAt(0).toUpperCase();
+            var firstChar = word.charAt(0).toUpperCase();
             if(word.match(/^[A-Z]+$/)) {
                 return firstChar;
             }
